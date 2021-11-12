@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  php81_cli:
+    build:
+      context: ./php81-cli
+    restart: always
+    networks:
+      app_net:
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
