@@ -39,6 +39,7 @@ RUN apk update \
     sockets \
     xml \
     xmlwriter \
+    zip \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
