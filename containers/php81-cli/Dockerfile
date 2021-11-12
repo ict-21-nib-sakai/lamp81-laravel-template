@@ -20,6 +20,7 @@ RUN apk update \
     dom \
     exif \
     fileinfo \
+    gd \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
