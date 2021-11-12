@@ -30,11 +30,11 @@ RUN apk update \
     intl \
     mysqli \
     opcache \
+    pdo_mysql \
+    posix \
     session \
     simplexml \
     soap \
-    pdo_mysql \
-    posix \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
