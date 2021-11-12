@@ -32,6 +32,7 @@ RUN apk update \
     opcache \
     session \
     simplexml \
+    soap \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
