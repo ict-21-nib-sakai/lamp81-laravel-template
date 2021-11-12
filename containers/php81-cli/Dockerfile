@@ -6,6 +6,7 @@ RUN apk update \
     curl-dev \
     libjpeg-turbo-dev \
     libpng-dev \
+    libxml2-dev \
     libzip-dev \
     supervisor \
   && docker-php-ext-configure gd --enable-gd \
@@ -16,6 +17,7 @@ RUN apk update \
     ctype \
     curl \
     dba \
+    dom \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
