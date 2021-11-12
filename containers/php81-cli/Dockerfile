@@ -3,6 +3,7 @@ FROM php:8.1.0RC6-cli-alpine3.14
 RUN apk update \
   && apk add --no-cache \
     bzip2-dev \
+    curl-dev \
     libjpeg-turbo-dev \
     libpng-dev \
     libzip-dev \
@@ -12,6 +13,8 @@ RUN apk update \
     bcmath \
     bz2 \
     calendar \
+    ctype \
+    curl \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
