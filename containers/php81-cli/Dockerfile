@@ -36,6 +36,7 @@ RUN apk update \
     session \
     simplexml \
     soap \
+    sockets \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
