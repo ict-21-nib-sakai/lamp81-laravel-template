@@ -11,6 +11,7 @@ RUN apk update \
   && docker-php-ext-install \
     bcmath \
     bz2 \
+    calendar \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
