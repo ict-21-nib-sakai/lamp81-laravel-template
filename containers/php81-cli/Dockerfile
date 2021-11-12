@@ -4,6 +4,7 @@ RUN apk update \
   && apk add --no-cache \
     bzip2-dev \
     curl-dev \
+    gettext-dev \
     libjpeg-turbo-dev \
     libpng-dev \
     libxml2-dev \
@@ -21,6 +22,7 @@ RUN apk update \
     exif \
     fileinfo \
     gd \
+    gettext \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
