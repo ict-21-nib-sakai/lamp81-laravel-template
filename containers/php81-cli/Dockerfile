@@ -6,6 +6,7 @@ RUN apk update \
     curl-dev \
     gettext-dev \
     gmp-dev \
+    icu-dev \
     libjpeg-turbo-dev \
     libpng-dev \
     libxml2-dev \
@@ -26,6 +27,7 @@ RUN apk update \
     gettext \
     gmp \
     iconv \
+    intl \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
