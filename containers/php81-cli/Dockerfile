@@ -38,6 +38,7 @@ RUN apk update \
     soap \
     sockets \
     xml \
+    xmlwriter \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
