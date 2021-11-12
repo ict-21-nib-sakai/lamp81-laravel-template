@@ -7,6 +7,8 @@ RUN apk update \
     libzip-dev \
     supervisor \
   && docker-php-ext-configure gd --enable-gd \
+  && docker-php-ext-install \
+    bcmath \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
