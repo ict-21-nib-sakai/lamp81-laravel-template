@@ -30,6 +30,7 @@ RUN apk update \
     intl \
     mysqli \
     opcache \
+    pdo \
     pdo_mysql \
     posix \
     session \
