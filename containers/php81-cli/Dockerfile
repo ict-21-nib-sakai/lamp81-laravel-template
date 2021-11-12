@@ -33,6 +33,7 @@ RUN apk update \
     session \
     simplexml \
     soap \
+    pdo_mysql \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
