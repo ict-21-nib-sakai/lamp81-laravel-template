@@ -5,6 +5,7 @@ RUN apk update \
     bzip2-dev \
     curl-dev \
     gettext-dev \
+    gmp-dev \
     libjpeg-turbo-dev \
     libpng-dev \
     libxml2-dev \
@@ -23,6 +24,7 @@ RUN apk update \
     fileinfo \
     gd \
     gettext \
+    gmp \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
