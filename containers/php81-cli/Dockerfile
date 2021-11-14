@@ -42,6 +42,6 @@ RUN apk update \
     zip \
   && rm -rf /var/cache/apk/*
 
-COPY conf/etc/supervisord.empty.conf /etc/supervisord.conf
+COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
