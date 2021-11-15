@@ -4,7 +4,7 @@ services:
   mysql:
     build:
       context: ./mysql
-#      # Dockerfile に .env の変数を渡す
+      # Dockerfile に .env の変数を渡す
       args:
         MYSQL_USER: ${MYSQL_USER}
         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
