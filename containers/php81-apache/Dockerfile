@@ -11,6 +11,7 @@ RUN apt-get update \
   ctype \
   dba \
   dom \
+  exif \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
