@@ -17,6 +17,7 @@ RUN apt-get update \
   exif \
   fileinfo \
   gd \
+  gettext \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
