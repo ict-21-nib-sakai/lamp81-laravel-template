@@ -4,6 +4,7 @@ RUN apt-get update \
 \
 && docker-php-ext-install \
   bcmath \
+  calendar \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
