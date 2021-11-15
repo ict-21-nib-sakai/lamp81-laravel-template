@@ -27,6 +27,7 @@ RUN apt-get update \
   mbstring \
   mysqli \
   opcache \
+  pdo \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
