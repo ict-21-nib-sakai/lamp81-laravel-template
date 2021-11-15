@@ -29,6 +29,7 @@ RUN apt-get update \
   opcache \
   pdo \
   pdo_mysql \
+  posix \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
