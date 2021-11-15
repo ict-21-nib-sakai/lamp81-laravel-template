@@ -12,6 +12,7 @@ RUN apt-get update \
   dba \
   dom \
   exif \
+  fileinfo \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
