@@ -30,6 +30,7 @@ RUN apt-get update \
   pdo \
   pdo_mysql \
   posix \
+  session \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
