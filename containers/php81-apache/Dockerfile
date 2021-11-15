@@ -4,6 +4,7 @@ RUN apt-get update \
 \
 && apt-get install -y --no-install-recommends \
   libgmp-dev \
+  libicu-dev \
   libjpeg-dev \
   libpng-dev \
   libxml2-dev \
@@ -21,6 +22,7 @@ RUN apt-get update \
   gettext \
   gmp \
   iconv \
+  intl \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
