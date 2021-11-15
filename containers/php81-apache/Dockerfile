@@ -28,6 +28,7 @@ RUN apt-get update \
   mysqli \
   opcache \
   pdo \
+  pdo_mysql \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
