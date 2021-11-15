@@ -25,6 +25,7 @@ RUN apt-get update \
   iconv \
   intl \
   mbstring \
+  mysqli \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
