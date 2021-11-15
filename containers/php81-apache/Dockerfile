@@ -6,6 +6,7 @@ RUN apt-get update \
   libgmp-dev \
   libicu-dev \
   libjpeg-dev \
+  libonig-dev \
   libpng-dev \
   libxml2-dev \
   libzip-dev \
@@ -23,6 +24,7 @@ RUN apt-get update \
   gmp \
   iconv \
   intl \
+  mbstring \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
