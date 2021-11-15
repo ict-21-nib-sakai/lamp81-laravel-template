@@ -31,6 +31,15 @@ services:
     networks:
       app_net:
 
+  php81_apache:
+    build:
+      context: php81-apache
+    restart: always
+    links:
+      - mysql
+    networks:
+      app_net:
+
 networks:
   app_net:
     driver: bridge
