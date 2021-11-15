@@ -20,6 +20,7 @@ RUN apt-get update \
   gd \
   gettext \
   gmp \
+  iconv \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
