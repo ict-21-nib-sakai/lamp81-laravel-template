@@ -26,6 +26,7 @@ RUN apt-get update \
   intl \
   mbstring \
   mysqli \
+  opcache \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
