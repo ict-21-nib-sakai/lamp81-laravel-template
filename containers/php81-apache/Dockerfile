@@ -6,6 +6,7 @@ RUN apt-get update \
   bcmath \
   calendar \
   ctype \
+  dba \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
