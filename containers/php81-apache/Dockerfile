@@ -36,6 +36,7 @@ RUN apt-get update \
   sockets \
   xml \
   xmlwriter \
+  zip \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
