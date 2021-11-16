@@ -25,4 +25,9 @@ if [ ! -f "root" ]; then cp root.example root ; fi
 cd ${CURRENT_DIRECTORY}/../../containers/php81-cli/conf/etc
 if [ ! -f "supervisord.conf" ]; then cp supervisord.example.conf supervisord.conf ; fi
 
+# Prepare a php.ini file.
+#  - PHP 8.1 Apache
+cd ${CURRENT_DIRECTORY}/../../containers/php81-apache/conf/usr/local/etc/php
+if [ ! -f "php.ini" ]; then cp php.ini.example.ini php.ini ; fi
+
 cd $CURRENT_DIRECTORY
