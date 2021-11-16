@@ -30,4 +30,9 @@ if [ ! -f "supervisord.conf" ]; then cp supervisord.example.conf supervisord.con
 cd ${CURRENT_DIRECTORY}/../../containers/php81-apache/conf/usr/local/etc/php
 if [ ! -f "php.ini" ]; then cp php.ini.example.ini php.ini ; fi
 
+# Prepare a apache conf file.
+#  - PHP 8.1 Apache
+cd ${CURRENT_DIRECTORY}/../../containers/php81-apache/conf/etc/apache2/sites-available
+if [ ! -f "000-default.conf" ]; then cp 000-default.example.conf 000-default.conf ; fi
+
 cd $CURRENT_DIRECTORY
