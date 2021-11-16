@@ -29,6 +29,7 @@ services:
     build:
       context: ./php81-cli
     volumes:
+      - ../code:/var/www/code
       - php81-cli-log:/var/log
     restart: always
     links:
