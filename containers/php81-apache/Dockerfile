@@ -31,6 +31,7 @@ RUN apt-get update \
   pdo_mysql \
   posix \
   session \
+  simplexml \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
