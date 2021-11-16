@@ -32,6 +32,7 @@ RUN apt-get update \
   posix \
   session \
   simplexml \
+  soap \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
