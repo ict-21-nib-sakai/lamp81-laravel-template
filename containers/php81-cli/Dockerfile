@@ -1,5 +1,6 @@
 FROM php:8.1.0RC6-cli-alpine3.14
 
+COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
 
 RUN apk update \
