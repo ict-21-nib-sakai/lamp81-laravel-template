@@ -44,6 +44,7 @@ RUN apt-get update \
 && docker-php-ext-enable \
   gd \
   mysqli \
+  pdo \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
