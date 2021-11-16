@@ -30,7 +30,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "docker"
 
   config.vm.provision "shell", inline: <<-SHELL
-    cd /home/vagrant/sync/vm
+    cd /home/vagrant/sync/vm/provision
     sh ./script.sh
   SHELL
 end
