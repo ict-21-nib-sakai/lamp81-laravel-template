@@ -35,4 +35,16 @@ if [ ! -f "php.ini" ]; then cp php.ini.example.ini php.ini ; fi
 cd ${CURRENT_DIRECTORY}/../../containers/php81-apache/conf/etc/apache2/sites-available
 if [ ! -f "000-default.conf" ]; then cp 000-default.example.conf 000-default.conf ; fi
 
+## Prepare a ".env" from ".env.example" for Laravel Framework.
+##  - PHP 8.1 CLI
+##  - PHP 8.1 Apache
+#cd ${CURRENT_DIRECTORY}/../../code
+#if [ ! -f ".env" ]; then cp .env.example .env ; fi
+#
+## Prepare a ".testing.env" from ".env.testing.example" for Laravel Framework.
+##  - PHP 8.1 CLI
+##  - PHP 8.1 Apache
+#cd ${CURRENT_DIRECTORY}/../../code
+#if [ ! -f ".env.testing" ]; then cp .env.testing.example .env.testing ; fi
+
 cd $CURRENT_DIRECTORY
