@@ -45,6 +45,7 @@ RUN apt-get update \
   gd \
   mysqli \
   pdo \
+  pdo_mysql \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
