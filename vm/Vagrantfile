@@ -31,6 +31,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     cd /home/vagrant/sync/vm/provision
-    sh ./script.sh
+    sh ./index.sh
   SHELL
 end
