@@ -34,6 +34,7 @@ RUN apt-get update \
   simplexml \
   soap \
   sockets \
+  xml \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
