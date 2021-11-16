@@ -8,4 +8,11 @@ CURRENT_DIRECTORY=`pwd`
 cd ${CURRENT_DIRECTORY}/../../containers
 if [ ! -f ".env" ]; then cp .env.example .env ; fi
 
+# Prepare mysql conf files.
+#  - MySQL 8.0
+cd ${CURRENT_DIRECTORY}/../../containers/mysql/conf/etc/mysql
+if [ ! -f "my.cnf" ];            then cp my.development.cnf            my.cnf ; fi
+if [ ! -f "conf.d/mysql.cnf" ];  then cp conf.d/mysql.development.cnf  conf.d/mysql.cnf  ; fi
+if [ ! -f "conf.d/docker.cnf" ]; then cp conf.d/docker.development.cnf conf.d/docker.cnf ; fi
+
 cd $CURRENT_DIRECTORY
