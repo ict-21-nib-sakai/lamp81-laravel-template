@@ -16,6 +16,9 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     # MySQLの文字コードとCollation
     #  @see https://qiita.com/tfunato/items/e48ad0a37b8244a788f6
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - mysql-log:/var/log/mysql
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_520_ci
     restart: always
     networks:
@@ -47,3 +50,7 @@ networks:
       driver: default
       config:
         - subnet: 172.20.0.0/24
+
+volumes:
+  mysql-data:
+  mysql-log:
