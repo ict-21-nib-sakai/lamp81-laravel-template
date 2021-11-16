@@ -12,6 +12,8 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "../", "/home/vagrant/sync", type: "rsync",
                           rsync__exclude: [".git/", ".idea/"]
 
+  config.vm.synced_folder "../containers", "/home/vagrant/sync/containers", type:"virtualbox"
+
   if Vagrant.has_plugin?("vagrant-vbguest")
     config.vbguest.auto_update = true
   end
