@@ -28,6 +28,8 @@ services:
   php81_cli:
     build:
       context: ./php81-cli
+    volumes:
+      - php81-cli-log:/var/log
     restart: always
     links:
       - mysql
@@ -54,3 +56,4 @@ networks:
 volumes:
   mysql-data:
   mysql-log:
+  php81-cli-log:
