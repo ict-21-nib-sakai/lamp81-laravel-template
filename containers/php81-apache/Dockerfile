@@ -33,6 +33,7 @@ RUN apt-get update \
   session \
   simplexml \
   soap \
+  sockets \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
