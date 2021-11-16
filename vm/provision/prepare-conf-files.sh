@@ -15,4 +15,9 @@ if [ ! -f "my.cnf" ];            then cp my.development.cnf            my.cnf ; 
 if [ ! -f "conf.d/mysql.cnf" ];  then cp conf.d/mysql.development.cnf  conf.d/mysql.cnf  ; fi
 if [ ! -f "conf.d/docker.cnf" ]; then cp conf.d/docker.development.cnf conf.d/docker.cnf ; fi
 
+# Prepare a crontab file.
+#  - PHP 8.1 CLI
+cd ${CURRENT_DIRECTORY}/../../containers/php81-cli/conf/etc/crontabs
+if [ ! -f "root" ]; then cp root.example root ; fi
+
 cd $CURRENT_DIRECTORY
