@@ -35,6 +35,7 @@ RUN apt-get update \
   soap \
   sockets \
   xml \
+  xmlwriter \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
