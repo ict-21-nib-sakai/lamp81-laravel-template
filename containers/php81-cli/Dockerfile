@@ -1,5 +1,7 @@
 FROM php:8.1.0RC6-cli-alpine3.14
 
+COPY conf /tmp/conf
+
 RUN apk update \
   && apk add --no-cache \
     bzip2-dev \
