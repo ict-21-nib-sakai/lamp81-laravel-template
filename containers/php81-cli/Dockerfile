@@ -3,8 +3,9 @@ FROM php:8.1.0RC6-cli-alpine3.14
 COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
 
-RUN apk update \
-  && apk add --no-cache \
+RUN /usr/local/bin/install-composer.sh \
+&& apk update \
+&& apk add --no-cache \
     bzip2-dev \
     curl-dev \
     gettext-dev \
