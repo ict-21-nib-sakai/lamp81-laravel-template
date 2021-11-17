@@ -40,9 +40,13 @@ services:
   php81_apache:
     build:
       context: php81-apache
+    volumes:
+      - ../code:/var/www/code
     restart: always
     links:
       - mysql
+    ports:
+      - "80:80"
     networks:
       app_net:
 
