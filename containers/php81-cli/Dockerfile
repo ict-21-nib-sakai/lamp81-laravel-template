@@ -15,6 +15,7 @@ RUN /usr/local/bin/install-composer.sh \
     libpng-dev \
     libxml2-dev \
     libzip-dev \
+    npm \
     supervisor \
   && docker-php-ext-configure gd --enable-gd \
   && docker-php-ext-install \
