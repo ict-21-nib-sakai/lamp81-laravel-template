@@ -1,7 +1,6 @@
-# Laravel Framework の再学習用リポジトリ
-PHPで人気のフレームワークLaravelの再学習用のリポジトリです。個人的な備忘録です。
-
-ソースコード等に登場する商品名やメーカー名は架空のものです。 なお、実在する名称および類似する名称が含まれる場合がありますが、意図したものではありません。
+# Laravel Framework を動かすための開発環境
+PHP で人気のフレームワーク Laravel 開発環境の **テンプレート** となるリポジトリです。
+また Vagrant や Docker 部分に関しては個人的な備忘録です。独学によるものが大きく、最適な構築方法とは限りません。ご意見や改善案は issue に記載いただければ嬉しいです。
 
 ## あなたのパソコンに必要なもの
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -21,9 +20,11 @@ $ vagrant plugin install vagrant-vbguest
 ```
 
 ## 自動的に構築される環境
-- Docker on Vagrant
-  - PHP 8.1
-  - MySQL 8.0
+- Vagrant 仮想マシン
+  - Docker コンテナ 
+    - PHP 8.1 RC6 CLI
+    - PHP 8.1 RC6 Apache
+    - MySQL 8.0
 
 ## 起動方法
 ```shell
