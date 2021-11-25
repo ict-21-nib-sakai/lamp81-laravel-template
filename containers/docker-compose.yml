@@ -34,7 +34,7 @@ services:
         PHP_CLI_USER_ID: ${PHP_CLI_USER_ID}
     volumes:
       - ../code:/var/www/code
-      - php81-cli-log:/var/log
+      - php81-cli-log:/home/${PHP_CLI_USER_NAME}/log
     restart: always
     links:
       - mysql
