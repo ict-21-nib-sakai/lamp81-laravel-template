@@ -28,6 +28,10 @@ services:
   php81_cli:
     build:
       context: ./php81-cli
+      # Dockerfile に .env の変数を渡す
+      args:
+        PHP_CLI_USER_NAME: ${PHP_CLI_USER_NAME}
+        PHP_CLI_USER_ID: ${PHP_CLI_USER_ID}
     volumes:
       - ../code:/var/www/code
       - php81-cli-log:/var/log
