@@ -44,6 +44,10 @@ services:
   php81_apache:
     build:
       context: php81-apache
+      # Dockerfile に .env の変数を渡す
+      args:
+        PHP_APACHE_USER_NAME: ${PHP_APACHE_USER_NAME}
+        PHP_APACHE_USER_ID: ${PHP_APACHE_USER_ID}
     volumes:
       - ../code:/var/www/code
     restart: always
