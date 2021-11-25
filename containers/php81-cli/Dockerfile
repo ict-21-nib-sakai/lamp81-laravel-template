@@ -3,7 +3,8 @@ FROM php:8.1.0RC6-cli-alpine3.14
 COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
 
-RUN /usr/local/bin/install-composer.sh \
+RUN adduser -D app-user --uid 1000 --shell /sbin/nologin \
+&& /usr/local/bin/install-composer.sh \
 && apk update \
 && apk add --no-cache \
     bzip2-dev \
@@ -50,3 +51,6 @@ RUN /usr/local/bin/install-composer.sh \
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+USER app-user
+WORKDIR /var/www/code
