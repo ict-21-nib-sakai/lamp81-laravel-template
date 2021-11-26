@@ -8,8 +8,6 @@ ARG MYSQL_CONTAINER_USER_NAME
 ARG MYSQL_CONTAINER_USER_ID
 
 RUN adduser ${MYSQL_CONTAINER_USER_NAME} --disabled-password --uid ${MYSQL_CONTAINER_USER_ID} --gecos "" --shell /sbin/nologin \
-&& apt-get update \
-&& apt-get install -y procps \
 &&  chmod 664 /etc/mysql/my.cnf \
 &&  chmod 664 /etc/mysql/conf.d/docker.cnf \
 &&  chmod 644 /etc/mysql/conf.d/mysql.cnf \
