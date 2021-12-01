@@ -1,4 +1,4 @@
-FROM php:8.1.0RC6-cli-alpine3.14
+FROM php:8.1.0-cli-alpine3.14
 
 COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
