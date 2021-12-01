@@ -22,8 +22,8 @@ $ vagrant plugin install vagrant-vbguest
 ## 自動的に構築される環境
 - Vagrant 仮想マシン
   - Docker コンテナ 
-    - PHP 8.1 RC6 CLI
-    - PHP 8.1 RC6 Apache
+    - PHP 8.1 CLI
+    - PHP 8.1 Apache
     - MySQL 8.0
 
 ## 起動方法
