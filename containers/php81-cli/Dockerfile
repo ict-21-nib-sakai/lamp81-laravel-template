@@ -6,6 +6,7 @@ COPY conf /tmp/conf
 RUN /usr/local/bin/install-composer.sh \
 && apk update \
 && apk add --no-cache \
+    curl-dev \
     libjpeg-turbo-dev \
     libpng-dev \
     libzip-dev \
@@ -16,6 +17,7 @@ RUN /usr/local/bin/install-composer.sh \
   bz2 \
   calendar \
   ctype \
+  curl \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
