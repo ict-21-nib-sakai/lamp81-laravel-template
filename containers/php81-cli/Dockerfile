@@ -14,6 +14,7 @@ RUN /usr/local/bin/install-composer.sh \
 && docker-php-ext-install \
   bcmath \
   bz2 \
+  calendar \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
