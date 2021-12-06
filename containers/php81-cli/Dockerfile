@@ -4,8 +4,8 @@ COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
 
 RUN /usr/local/bin/install-composer.sh \
-&& apk update \
-&& apk add --no-cache \
+  && apk update \
+  && apk add --no-cache \
     curl-dev \
     gettext-dev \
     gmp-dev \
@@ -15,24 +15,24 @@ RUN /usr/local/bin/install-composer.sh \
     libxml2-dev \
     libzip-dev \
     supervisor \
-&& docker-php-ext-configure gd --enable-gd \
-&& docker-php-ext-install \
-  bcmath \
-  bz2 \
-  calendar \
-  ctype \
-  curl \
-  dba \
-  dom \
-  exif \
-  fileinfo \
-  gd \
-  gettext \
-  gmp \
-  iconv \
-  intl \
-  mysqli \
-&& rm -rf /var/cache/apk/*
+  && docker-php-ext-configure gd --enable-gd \
+  && docker-php-ext-install \
+    bcmath \
+    bz2 \
+    calendar \
+    ctype \
+    curl \
+    dba \
+    dom \
+    exif \
+    fileinfo \
+    gd \
+    gettext \
+    gmp \
+    iconv \
+    intl \
+    mysqli \
+  && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
 
