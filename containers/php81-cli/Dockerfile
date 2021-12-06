@@ -21,6 +21,7 @@ RUN /usr/local/bin/install-composer.sh \
   curl \
   dba \
   dom \
+  exif \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
