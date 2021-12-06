@@ -6,8 +6,12 @@ COPY conf /tmp/conf
 RUN /usr/local/bin/install-composer.sh \
 && apk update \
 && apk add --no-cache \
+    libjpeg-turbo-dev \
+    libpng-dev \
+    libzip-dev \
     supervisor \
-  && rm -rf /var/cache/apk/*
+&& docker-php-ext-configure gd --enable-gd \
+&& rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
 
