@@ -7,6 +7,7 @@ RUN /usr/local/bin/install-composer.sh \
 && apk update \
 && apk add --no-cache \
     curl-dev \
+    gettext-dev \
     libjpeg-turbo-dev \
     libpng-dev \
     libxml2-dev \
@@ -24,6 +25,7 @@ RUN /usr/local/bin/install-composer.sh \
   exif \
   fileinfo \
   gd \
+  gettext \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
