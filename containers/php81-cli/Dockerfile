@@ -11,6 +11,8 @@ RUN /usr/local/bin/install-composer.sh \
     libzip-dev \
     supervisor \
 && docker-php-ext-configure gd --enable-gd \
+&& docker-php-ext-install \
+  bcmath \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
