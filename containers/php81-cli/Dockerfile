@@ -31,6 +31,7 @@ RUN /usr/local/bin/install-composer.sh \
   gmp \
   iconv \
   intl \
+  mysqli \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
