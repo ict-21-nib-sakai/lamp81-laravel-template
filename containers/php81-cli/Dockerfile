@@ -13,6 +13,7 @@ RUN /usr/local/bin/install-composer.sh \
 && docker-php-ext-configure gd --enable-gd \
 && docker-php-ext-install \
   bcmath \
+  bz2 \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
