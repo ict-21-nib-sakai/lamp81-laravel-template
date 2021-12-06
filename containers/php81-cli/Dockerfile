@@ -18,6 +18,7 @@ RUN /usr/local/bin/install-composer.sh \
   calendar \
   ctype \
   curl \
+  dba \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
