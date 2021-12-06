@@ -9,6 +9,7 @@ RUN /usr/local/bin/install-composer.sh \
     curl-dev \
     libjpeg-turbo-dev \
     libpng-dev \
+    libxml2-dev \
     libzip-dev \
     supervisor \
 && docker-php-ext-configure gd --enable-gd \
@@ -19,6 +20,7 @@ RUN /usr/local/bin/install-composer.sh \
   ctype \
   curl \
   dba \
+  dom \
 && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
