@@ -32,6 +32,7 @@ RUN /usr/local/bin/install-composer.sh \
     iconv \
     intl \
     mysqli \
+    opcache \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
