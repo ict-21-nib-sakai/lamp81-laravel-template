@@ -42,6 +42,7 @@ RUN /usr/local/bin/install-composer.sh \
     sockets \
     xml \
     xmlwriter \
+    zip \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
