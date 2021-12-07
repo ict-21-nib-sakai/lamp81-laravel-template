@@ -33,11 +33,11 @@ RUN /usr/local/bin/install-composer.sh \
     intl \
     mysqli \
     opcache \
+    pdo_mysql \
+    posix \
     session \
     simplexml \
     soap \
-    pdo_mysql \
-    posix \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
