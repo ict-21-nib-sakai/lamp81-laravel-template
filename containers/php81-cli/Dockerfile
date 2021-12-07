@@ -33,6 +33,7 @@ RUN /usr/local/bin/install-composer.sh \
     intl \
     mysqli \
     opcache \
+    pdo \
     pdo_mysql \
     posix \
     session \
