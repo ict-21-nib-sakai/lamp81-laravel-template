@@ -37,6 +37,7 @@ RUN /usr/local/bin/install-composer.sh \
     simplexml \
     soap \
     pdo_mysql \
+    posix \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
