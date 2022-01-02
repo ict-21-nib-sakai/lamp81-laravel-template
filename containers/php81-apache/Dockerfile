@@ -1,4 +1,4 @@
-FROM php:8.1.0-apache
+FROM php:8.1.1-apache
 
 COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
@@ -14,6 +14,7 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
   libgmp-dev \
   libicu-dev \
   libjpeg-dev \
+  libmagickwand-dev \
   libonig-dev \
   libpng-dev \
   libxml2-dev \
@@ -27,7 +28,7 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
   dom \
   exif \
   fileinfo \
-  gd \
+  -j$(nproc) gd \
   gettext \
   gmp \
   iconv \
@@ -46,13 +47,17 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
   xmlwriter \
   zip \
 \
-&& docker-php-ext-configure gd --with-freetype --with-jpeg \
+&& docker-php-ext-configure gd \
+  --with-freetype=/usr/include/ \
+  --with-jpeg=/usr/include/ \
 \
 && docker-php-ext-enable \
   gd \
   mysqli \
   pdo \
   pdo_mysql \
+\
+&& printf "\n" | pecl install imagick-3.6.0 \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
