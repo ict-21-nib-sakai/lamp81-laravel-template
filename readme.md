@@ -17,6 +17,7 @@ $ sudo apt install rsync
 ### Vagrant プラグインのインストール
 ```shell
 $ vagrant plugin install vagrant-vbguest
+$ vagrant plugin install vagrant-rsync-back
 ```
 
 ## 自動的に構築される環境
