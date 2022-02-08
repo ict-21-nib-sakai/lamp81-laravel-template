@@ -47,4 +47,12 @@ if [ ! -f ".env" ]; then cp .env.example .env ; fi
 cd ${CURRENT_DIRECTORY}/../../code
 if [ ! -f ".env.testing" ]; then cp .env.testing.example .env.testing ; fi
 
+# Prepare a "postfix/main.cf" file.
+cd "${CURRENT_DIRECTORY}"/../../containers/postfix/conf/etc/postfix || exit
+if [ ! -f "main.cf" ]; then cp main.cf.example.cf main.cf ; fi
+
+# Prepare a "postfix/sasl_passwd" file.
+cd "${CURRENT_DIRECTORY}"/../../containers/postfix/conf/etc/postfix || exit
+if [ ! -f "sasl_passwd" ]; then cp sasl_passwd.example sasl_passwd ; fi
+
 cd $CURRENT_DIRECTORY
