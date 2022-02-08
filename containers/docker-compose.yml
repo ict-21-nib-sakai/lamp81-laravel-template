@@ -27,6 +27,17 @@ services:
       app_net:
         ipv4_address: 172.20.0.11
 
+  postfix:
+    build:
+      context: ./postfix
+      # Dockerfile に .env の変数を渡す
+      args:
+        POSTFIX_CONTAINER_USER_NAME: ${POSTFIX_CONTAINER_USER_NAME}
+        POSTFIX_CONTAINER_USER_ID: ${POSTFIX_CONTAINER_USER_ID}
+    restart: always
+    networks:
+      app_net:
+
   php81_cli:
     build:
       context: ./php81-cli
@@ -40,6 +51,7 @@ services:
     restart: always
     links:
       - mysql
+      - postfix
     networks:
       app_net:
 
@@ -55,6 +67,7 @@ services:
     restart: always
     links:
       - mysql
+      - postfix
     ports:
       - "80:80"
     networks:

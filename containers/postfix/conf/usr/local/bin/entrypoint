@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+# Prepare files of Postfix.
+sudo postfix stop
+sudo postmap /etc/postfix/sasl_passwd
+
+# Run as foreground (perpetuation process).
+sudo postfix start-fg
+
+exec "$@"
