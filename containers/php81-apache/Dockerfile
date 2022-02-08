@@ -19,6 +19,7 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
   libpng-dev \
   libxml2-dev \
   libzip-dev \
+  ssmtp \
 \
 && docker-php-ext-install \
   bcmath \
@@ -57,6 +58,11 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
   pdo_mysql \
 \
 && printf "\n" | pecl install imagick-3.6.0 \
+\
+&& echo 'sendmail_path = "/usr/sbin/ssmtp -t"' > /usr/local/etc/php/conf.d/ssmtp.ini \
+&& cp /tmp/conf/etc/ssmtp/ssmtp.conf /etc/ssmtp/ssmtp.conf \
+&& chown root:mail /etc/ssmtp/ssmtp.conf \
+&& chmod 640       /etc/ssmtp/ssmtp.conf \
 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
