@@ -3,13 +3,18 @@ PHP で人気のフレームワーク Laravel 開発環境の **テンプレー�
 また Vagrant や Docker 部分に関しては個人的な備忘録です。独学によるものが大きく、最適な構築方法とは限りません。ご意見や改善案は issue に記載いただければ嬉しいです。
 
 ## あなたのパソコンに必要なもの
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-  - お使いのパソコンのOSに合うものをダウンロードし、インストールしてください。
-- [Vagrant](https://www.vagrantup.com/downloads)
-  - お使いのパソコンのOSに合うものをダウンロードし、インストールしてください。
-- rsync コマンド
-  - お使いのパソコンに合わせてインストールしてください。
-  - 例えば Ubuntu での例。
+
+### VirtualBox
+- お使いのパソコンのOSに合うものをダウンロードし、インストールしてください。
+- https://www.virtualbox.org/wiki/Downloads
+
+### Vagrant
+- お使いのパソコンのOSに合うものをダウンロードし、インストールしてください。
+- https://www.vagrantup.com/downloads
+
+### rsync コマンド
+- お使いのパソコンに合わせてインストールしてください。
+- 例えば Ubuntu での例。
 ```shell
 $ sudo apt install rsync
 ```

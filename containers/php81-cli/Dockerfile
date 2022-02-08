@@ -1,4 +1,4 @@
-FROM php:8.1.1-cli-alpine3.15
+FROM php:8.1.2-cli-alpine3.15
 
 COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
@@ -43,7 +43,6 @@ RUN adduser -D ${PHP_CLI_USER_NAME} --uid ${PHP_CLI_USER_ID} --shell /sbin/nolog
     session \
     simplexml \
     soap \
-    sockets \
     xml \
     xmlwriter \
     zip \
