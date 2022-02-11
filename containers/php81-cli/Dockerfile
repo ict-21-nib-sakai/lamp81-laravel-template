@@ -18,8 +18,10 @@ RUN adduser -D ${PHP_CLI_USER_NAME} --uid ${PHP_CLI_USER_ID} --shell /sbin/nolog
     libpng-dev \
     libxml2-dev \
     libzip-dev \
+    sed \
     ssmtp \
     supervisor \
+    sudo \
   && docker-php-ext-configure gd --enable-gd \
   && docker-php-ext-install \
     bcmath \
@@ -53,8 +55,14 @@ RUN adduser -D ${PHP_CLI_USER_NAME} --uid ${PHP_CLI_USER_ID} --shell /sbin/nolog
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
-
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+# Allow sudo command.
+RUN echo "${PHP_CLI_USER_NAME} ALL=NOPASSWD: /usr/local/bin/provision-crontab.sh"     | EDITOR='tee -a' visudo >/dev/null \
+&&  echo "${PHP_CLI_USER_NAME} ALL=NOPASSWD: /usr/local/bin/provision-supervisord.sh" | EDITOR='tee -a' visudo >/dev/null
+
+# Inject several command in "docker-php-entrypoint"
+RUN /usr/local/bin/inject-command-in-entrypoint.sh
 
 USER ${PHP_CLI_USER_NAME}
 WORKDIR /var/www/code
