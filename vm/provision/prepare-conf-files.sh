@@ -51,6 +51,10 @@ if [ ! -f ".env.testing" ]; then cp .env.testing.example .env.testing ; fi
 cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/ssmtp || exit
 if [ ! -f "ssmtp.conf" ]; then cp ssmtp.conf.example.conf ssmtp.conf ; fi
 
+# Prepare a "ssmtp.conf" file.
+cd "${CURRENT_DIRECTORY}"/../../containers/php81-cli/conf/etc/ssmtp || exit
+if [ ! -f "ssmtp.conf" ]; then cp ssmtp.conf.example.conf ssmtp.conf ; fi
+
 # Prepare a "postfix/main.cf" file.
 cd "${CURRENT_DIRECTORY}"/../../containers/postfix/conf/etc/postfix || exit
 if [ ! -f "main.cf" ]; then cp main.cf.example.cf main.cf ; fi
