@@ -18,6 +18,7 @@ RUN adduser -D ${PHP_CLI_USER_NAME} --uid ${PHP_CLI_USER_ID} --shell /sbin/nolog
     libpng-dev \
     libxml2-dev \
     libzip-dev \
+    ssmtp \
     supervisor \
   && docker-php-ext-configure gd --enable-gd \
   && docker-php-ext-install \
@@ -46,6 +47,9 @@ RUN adduser -D ${PHP_CLI_USER_NAME} --uid ${PHP_CLI_USER_ID} --shell /sbin/nolog
     xml \
     xmlwriter \
     zip \
+  && cp /tmp/conf/etc/ssmtp/ssmtp.conf /etc/ssmtp/ssmtp.conf \
+  && chown root:root /etc/ssmtp/ssmtp.conf \
+  && chmod 644       /etc/ssmtp/ssmtp.conf \
   && rm -rf /var/cache/apk/*
 
 COPY conf/etc/supervisord.default.conf /etc/supervisord.conf
