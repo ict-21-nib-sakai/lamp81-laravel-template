@@ -10,6 +10,7 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
 && apt-get update \
 \
 && apt-get install -y --no-install-recommends \
+  libcap2-bin \
   libfreetype6-dev \
   libgmp-dev \
   libicu-dev \
@@ -20,6 +21,7 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
   libxml2-dev \
   libzip-dev \
   ssmtp \
+  sudo \
 \
 && docker-php-ext-install \
   bcmath \
@@ -68,6 +70,16 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
 && rm -rf /var/lib/apt/lists/* \
 \
 && a2enmod rewrite
+ 
+# Allow "/usr/sbin/apache2" command as non-root user.
+RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/apache2
+
+# Allow sudo command.
+RUN echo "${PHP_APACHE_USER_NAME} ALL=NOPASSWD: /usr/local/bin/provision-php-ini.sh"      | EDITOR='tee -a' visudo >/dev/null \
+&&  echo "${PHP_APACHE_USER_NAME} ALL=NOPASSWD: /usr/local/bin/provision-apache2-conf.sh" | EDITOR='tee -a' visudo >/dev/null
+
+# Inject several command in "docker-php-entrypoint"
+RUN /usr/local/bin/inject-command-in-entrypoint.sh
 
 USER ${PHP_APACHE_USER_NAME}
 WORKDIR /var/www/code
