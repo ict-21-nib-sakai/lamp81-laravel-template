@@ -31,6 +31,7 @@ $ vagrant plugin install vagrant-rsync-back
     - PHP 8.1 CLI
     - PHP 8.1 Apache
     - MySQL 8.0
+    - Postfix
 
 ## 起動方法
 ```shell
