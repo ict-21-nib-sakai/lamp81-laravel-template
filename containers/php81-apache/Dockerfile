@@ -45,6 +45,7 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
   session \
   simplexml \
   soap \
+  sockets \
   xml \
   xmlwriter \
   zip \
