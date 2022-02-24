@@ -46,6 +46,7 @@ RUN adduser -D ${PHP_CLI_USER_NAME} --uid ${PHP_CLI_USER_ID} --shell /sbin/nolog
     session \
     simplexml \
     soap \
+    sockets \
     xml \
     xmlwriter \
     zip \
