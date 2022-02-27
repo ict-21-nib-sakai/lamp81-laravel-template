@@ -52,6 +52,16 @@ if [ ! -f ".env.testing" ]; then cp .env.testing.example .env.testing ; fi
 cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/apache2 || exit
 if [ ! -f "apache2.conf" ]; then cp apache2.conf.example.conf apache2.conf ; fi
 
+# Prepare a "my-site.crt" file.
+#  - PHP 8.1 Apache
+cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/pki/tls/certs || exit
+if [ ! -f "my-site.crt" ]; then cp my-site.crt.example.crt my-site.crt ; fi
+
+# Prepare a "my-site.key" file.
+#  - PHP 8.1 Apache
+cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/pki/tls/private || exit
+if [ ! -f "my-site.key" ]; then cp my-site.key.example.key my-site.key ; fi
+
 # Prepare a "ssmtp.conf" file.
 cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/ssmtp || exit
 if [ ! -f "ssmtp.conf" ]; then cp ssmtp.conf.example.conf ssmtp.conf ; fi
