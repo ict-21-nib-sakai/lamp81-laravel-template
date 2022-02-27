@@ -47,6 +47,11 @@ if [ ! -f ".env" ]; then cp .env.example .env ; fi
 cd ${CURRENT_DIRECTORY}/../../code
 if [ ! -f ".env.testing" ]; then cp .env.testing.example .env.testing ; fi
 
+# Prepare an "apache2.conf" file.
+#  - PHP 8.1 Apache
+cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/apache2 || exit
+if [ ! -f "apache2.conf" ]; then cp apache2.conf.example.conf apache2.conf ; fi
+
 # Prepare a "ssmtp.conf" file.
 cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/ssmtp || exit
 if [ ! -f "ssmtp.conf" ]; then cp ssmtp.conf.example.conf ssmtp.conf ; fi
