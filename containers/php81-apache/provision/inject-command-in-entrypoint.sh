@@ -14,6 +14,7 @@ INSERT_COMMAND="
 # BEGIN Additional Commands.
 sudo /usr/local/bin/provision-php-ini.sh
 sudo /usr/local/bin/provision-apache2-conf.sh
+sudo /usr/local/bin/provision-ssl-crt.sh
 # END Additional Commands."
 
 # Replace some characters.
