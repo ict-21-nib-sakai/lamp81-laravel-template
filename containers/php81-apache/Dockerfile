@@ -77,10 +77,12 @@ RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/apache2
 
 # Allow sudo command.
 RUN echo "${PHP_APACHE_USER_NAME} ALL=NOPASSWD: /usr/local/bin/provision-php-ini.sh"      | EDITOR='tee -a' visudo >/dev/null \
-&&  echo "${PHP_APACHE_USER_NAME} ALL=NOPASSWD: /usr/local/bin/provision-apache2-conf.sh" | EDITOR='tee -a' visudo >/dev/null
+&&  echo "${PHP_APACHE_USER_NAME} ALL=NOPASSWD: /usr/local/bin/provision-apache2-conf.sh" | EDITOR='tee -a' visudo >/dev/null \
+&&  echo "${PHP_APACHE_USER_NAME} ALL=NOPASSWD: /usr/local/bin/provision-ssl-crt.sh"      | EDITOR='tee -a' visudo >/dev/null
 
 # Inject several command in "docker-php-entrypoint"
 RUN /usr/local/bin/inject-command-in-entrypoint.sh
 
 USER ${PHP_APACHE_USER_NAME}
 WORKDIR /var/www/code
+EXPOSE 80 443
