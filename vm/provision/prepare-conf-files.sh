@@ -52,6 +52,10 @@ if [ ! -f ".env.testing" ]; then cp .env.testing.example .env.testing ; fi
 cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/apache2 || exit
 if [ ! -f "apache2.conf" ]; then cp apache2.conf.example.conf apache2.conf ; fi
 
+# Prepare a "my-site-ssl.conf" file.
+cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/apache2/sites-available || exit
+if [ ! -f "my-site-ssl.conf" ]; then cp default-ssl.conf.example.conf my-site-ssl.conf ; fi
+
 # Prepare a "my-site.crt" file.
 #  - PHP 8.1 Apache
 cd "${CURRENT_DIRECTORY}"/../../containers/php81-apache/conf/etc/pki/tls/certs || exit
