@@ -1,4 +1,4 @@
-FROM php:8.1.3-apache
+FROM php:8.1.5-apache
 
 COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
@@ -34,7 +34,6 @@ RUN adduser ${PHP_APACHE_USER_NAME} --disabled-password --uid ${PHP_APACHE_USER_
   -j$(nproc) gd \
   gettext \
   gmp \
-  iconv \
   intl \
   mbstring \
   mysqli \
