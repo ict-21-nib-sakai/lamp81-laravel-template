@@ -1,4 +1,4 @@
-FROM php:8.1.3-cli-alpine3.15
+FROM php:8.1.5-cli-alpine3.15
 
 COPY provision/*.sh /usr/local/bin/
 COPY conf /tmp/conf
@@ -36,7 +36,6 @@ RUN adduser -D ${PHP_CLI_USER_NAME} --uid ${PHP_CLI_USER_ID} --shell /sbin/nolog
     -j$(nproc) gd \
     gettext \
     gmp \
-    iconv \
     intl \
     mysqli \
     opcache \
